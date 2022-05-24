@@ -17,8 +17,10 @@ function MyApp({ Component, pageProps }) {
           <meta property="og:url" content="" />
           <meta property="og:site_name" content="" />
           <meta property="article:section" content={meta["_embedded"]["wp:term"][0][0]["name"]} />
-          <meta property="og:image" content={meta["_embedded"]["wp:featuredmedia"][0]['media_details'].sizes.medium['source_url']} />
+          <meta property="og:image" content={meta["_embedded"]["wp:featuredmedia"][0]['media_details'].sizes.full['source_url']} />
           <meta property="og:image:alt" content={meta["_embedded"]["wp:featuredmedia"][0]["alt_text"]} />
+          <meta property="og:image:width" content="750" />
+          <meta property="og:image:height" content="394" />
         </>
       );
     }

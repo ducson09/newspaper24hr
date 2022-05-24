@@ -1,12 +1,14 @@
 import { useEffect } from 'react';
 import { getPost, getSlugs } from '../../utils/wordpress';
-import Router from 'next/router';
-export default function PostPage({post}) {
+import Router, { useRouter } from 'next/router';
+export default function PostPage({ post }) {
+    const router = useRouter();
     useEffect(() => {
-        const {pathname} = Router;
-        Router.push("https://newspaper24hr.com"+pathname);
-    }, [])
-    
+        if (router.query.p == post.id) {
+            Router.push(post.link);
+        }
+    }, [router.query.p])
+
     return (
         <div className='container pt-5'>
             <h1 className='text-center pb-5'>{post.title.rendered}</h1>
