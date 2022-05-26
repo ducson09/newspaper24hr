@@ -1,7 +1,7 @@
 const BASE_URL = 'https://newspaper24hr.com/wp-json/wp/v2';
 
 export async function getPosts() {
-    const postsRes = await fetch(BASE_URL + '/posts?per_page=5000');
+    const postsRes = await fetch(BASE_URL + '/posts?per_page=500');
     const posts = await postsRes.json();
     return posts;
 }
